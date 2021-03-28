@@ -12,6 +12,9 @@ public class View_ConsoleTexts {
         System.out.println("Choose dimension sizes (4-8)!\n First: a number for height + enter \n Second: a number for width + enter");
     }
 
+    //    Van itt pár olyan print metódus ami 99%-ban ugyanazt a szöveget írja ki.
+    //    Azt javaslom legyen 1 metódus ami input paraméterként kapja meg azt az 1 pici részt ami változik a textben.
+    //    És behelyettesíti a szövegbe amit kiír. Pl a playser 1 v 2 itt a szám.
     public static void printFirstPlayerChooses() {
         System.out.println("Player #1`s turn. First choose a row with a number and enter, than the column with a number and enter.");
     }
