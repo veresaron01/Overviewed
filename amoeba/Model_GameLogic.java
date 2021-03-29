@@ -24,6 +24,8 @@ public class Model_GameLogic {
             // Ez a print és a ciklus itt teljesen fölösleges. Vagy a ciklusban hívott getInput a fölösleges.
             // A getInput addig kéregeti a két számot, amíg 4-8 köz nem lesz.F
             // Emiatt itt az 1. while ciklus nem fog működni rendesen. 1 ciklus elég a számok újrakéregetésére.
+            // // Itt is funcionalitása van. A cél az, hogy addig kérje be a két dimenziót amíg nem esik a megfelelő tartományba. Ha valaki a második
+            // // inputnál rosszat ad meg, akkor valószínű nem értette meg, nem figyelt a feltételekre, és valószínű az első számot is kijavítaná.
             vct.printWrongFieldDimensionSizes();
         }
 
