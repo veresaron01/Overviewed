@@ -257,6 +257,9 @@ public class Model_GameUtility {
                 );
                 //  a "%s %s" az ismétlődik, na ezt meg érdemes volna egy konstansba kiemelni
                 //  Egyébként nem teljesen értem, miért kell a ciklusban a dimension -2, majd utána a lista kreálásnál manuálisan adjuk meg, hogy z+1,+2,+3. Mehetne a teljes ist gyártás a ciklus iterálással a dimenió számig.
+                // // Azért kell így mert az átló hosszától függően több találat is lehetséges az adott átlón és ezeknek külön 4-es lista kell. Az egyik for végigmegy a lehetséges átlókon,
+                // // a másik for pedig az egyes átlókon belül megy végig a lehetőségeken. Mindegyik ilyen lehetség 4 elemet kell tartalmazzon.
+                // // (Amúgy a fieldDimensionX és fieldDimensionY itt még egymás helyén vannak, megcserélve működik teljesen jól, szombaton ezt tettem fel.)
                 if (exStepsStr.containsAll(allStepsInTheDiagon)) {
                     return true;
                 }
