@@ -3,10 +3,6 @@ package amoeba;
 public class View_GameField {
 
     public void printField(int height, int length, char[][] fieldValues) {
-        // field fölösleges változó, sehol nincs használva.
-        // Ilyeneket nem jó a kódban hagyni, nehezíti az átláthatóságát.
-        char[][] field = new char[length][height];
-        field = fieldValues;
 
         for (int i = 0; i < height; i++) {
             // Itt a for (int j = 0; j < length; j++) 3x ismétlődik. Meg a ciklusok utáni empty stringes print is.
@@ -28,6 +24,5 @@ public class View_GameField {
         }
 
     }
-
 
 }
