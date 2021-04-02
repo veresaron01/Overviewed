@@ -39,6 +39,11 @@ public class Model_GameUtility {
         }
     }
 
+    // Az átlós lentről-fentről for ciklusos rész nagy százalékban ugyanaz a logika.
+    // Ebben a metódusban még mindig sok a duplikáció. A 2 ciklus bele angyon hasonló, keheten kiemelni.
+    // Kód duplikációt tudunk kiszűrni ha ezt az egész for ciklusos dolgot kipakoljuk egy külön metódusba, és azt hívjuk 2x.
+    // Így ahogy kiemelted ametódust, került bele még fölösleges művelet. Létrehozol egy listát, feltöltöd, beleteszed egy külső listába.
+    // mehetne egyből a külső listába addAll-al
     private void getDiagonalMatches() {
 
         //atlosan lehetseges talalatok bal fentrol, jobb le.
@@ -70,7 +75,8 @@ public class Model_GameUtility {
     }
 
     public char[][] getCurrentWholeField() {
-
+        // A köv 2 for ciklus elég hasonlóan néz ki. Ki lehetne emelni a duplikációt egy metódusba.
+        // Aminek lehetne 2 input paramétere. A lista amin iterál, meg az X/O.
         for (int i = 0; i < exCoordinatesY.size(); i++) {
             currentWholeField[exCoordinatesY.get(i)][exCoordinatesX.get(i)] = 'X';
         }
@@ -91,6 +97,7 @@ public class Model_GameUtility {
         return false;
     }
 
+    // Ez még mindig duplikáció. addExStep és addOoStep szinte ugyanazt csinálja. Leheten 1 metódus.
     public void addExStep(int y, int x) {
         exCoordinatesY.add(y);
         exCoordinatesX.add(x);
@@ -120,6 +127,7 @@ public class Model_GameUtility {
 
     //talalatok megtalalasa (4 darab egy egyenes menten megszakitas nelkul, egy fajtabol (X=1 || O=2)
     public boolean matcher(int XO) {
+        // Redundáns inicializációk
         List<Integer> YCoordinatesForXOrOSteps = new ArrayList();
         List<Integer> XCoordinatesForXOrOSteps = new ArrayList();
         List<String> exOrOoAllStepsStr = new ArrayList();
@@ -127,7 +135,7 @@ public class Model_GameUtility {
         if (XO == 1) {
             YCoordinatesForXOrOSteps = exCoordinatesY;
             XCoordinatesForXOrOSteps = exCoordinatesX;
-            exOrOoAllStepsStr =exAllStepsStr;
+            exOrOoAllStepsStr = exAllStepsStr;
         } else {
             YCoordinatesForXOrOSteps = ooCoordinatesY;
             XCoordinatesForXOrOSteps = ooCoordinatesX;
@@ -135,6 +143,9 @@ public class Model_GameUtility {
         }
 
         //vizszintesen talalat
+        // A vízszintes és függőleges for ciklusos rész nagy százalékban ugyanaz a logika.
+        // Kód duplikációt tudunk kiszűrni ha ezt az egész for ciklusos dolgot kipakoljuk egy külön metódusba, és azt hívjuk 2x.
+        // Ennek lenne az input paramétere, hogy melyik listán akarunk iterálni, meg melyik lista kell a continuityhez.
         List<Integer> list1 = new ArrayList(YCoordinatesForXOrOSteps);
         Collections.sort(list1);
 

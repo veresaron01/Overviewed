@@ -15,6 +15,11 @@ public class Controller_UserInput {
     public char getInputFromConsole() throws IOException {
         char c;
         String s;
+        //  Ennek a regexnek itt nem látom hasznát.
+        //  Az egész metódus bele lehetne szimplán return reader.readLine().charAt(0);
+        // // Megváltozna a program funkcionalitása, ha úgy átírnám. A cél az ezzel, hogy ha valaki több karaktert üt be, akkor annak újabb lehetőséget
+        // // adjon a program, mert az nagy eséllyel elgépelés lenne ugyanis sehol nem kér egyszerre több karaktert. (Véletlen 2 billentyű közé üt és
+        // // két vagy több karaktert üt be.)
         while (!(s = reader.readLine()).matches(".")) {
         }
         c = s.charAt(0);
@@ -27,6 +32,8 @@ public class Controller_UserInput {
         System.out.println(regex);
 
         while (!String.valueOf((result = getInputFromConsole())).matches(regex)) {
+            // Az üzenetek amiket a usernek adunk jó ha minél meaningfulabbak.
+            // Pl a szám legyen 1 és valami közt
             System.out.println("Number from 1 - " + reg);
         }
 

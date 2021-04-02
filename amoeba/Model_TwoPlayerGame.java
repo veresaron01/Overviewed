@@ -65,6 +65,8 @@ public class Model_TwoPlayerGame {
 
             takePlayerStep(2);
 
+            // ez a 2 if kód duplikáció, az egész rész tök hasonló mint a 2 if az 1. játékosra. Mehetne egy külön metódusba az egész.
+            // Aminek van egy paramétere, az 1 vagy a 2
             if (tpm.matcher(2)) {
                 View_ConsoleTexts.printWinner(2);
                 winnerFound = true;
@@ -78,4 +80,5 @@ public class Model_TwoPlayerGame {
 
         }
     }
+
 }

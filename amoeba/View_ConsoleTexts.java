@@ -13,6 +13,8 @@ public class View_ConsoleTexts {
     }
 
     public static void printWhichPlayerChooses(int XO12) {
+        // Ez is extra duplikáció. Jobb ha van 1 db text amibe az inputként kapott szám behelyettesítődik.
+        // Mondjuk String.formattal %s-el
         if (XO12 == 1) {
             System.out.println("Player #1`s turn. First choose a row with a number and enter, than the column with a number and enter.");
         } else {
@@ -25,6 +27,8 @@ public class View_ConsoleTexts {
     }
 
     public static void printWinner(int XO12) {
+        // Ez is extra duplikáció. Jobb ha van 1 db text amibe az inputként kapott szám behelyettesítődik.
+        // Mondjuk String.formattal %s-el
         if(XO12 == 1) {
             System.out.println("\n\nThe Winner is Player #1!!! (\"X\") Congratulations!");
         } else {
